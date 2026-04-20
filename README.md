@@ -131,12 +131,11 @@ The January 27–28, 2009 meeting marks a structural shift in Minutes formatting
 
 This project is collaborative. My responsibilities:
 
-- FOMC Statements and Minutes: web scraping, ETL pipeline, text processing
-- Press Conference transcripts: scraping and processing
+- FOMC Statements, Minutes and Press Conference transcripts: web scraping, ETL pipeline, text processing
 - Annotation pipeline architecture: prompt design, Together AI integration, checkpoint system, output normalization
 - Divergence analysis: model disagreement quantification and human review prioritization
 
-Teammates cover: SEPs, Speeches, and empirical regression analysis.
+Teammates cover: collecting lower frequency documents including SEPs, Speeches, and beige books.
 
 ## Dependencies
 
