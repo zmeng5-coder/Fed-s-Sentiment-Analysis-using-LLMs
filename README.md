@@ -104,7 +104,7 @@ Fed-s-Sentiment-Analysis-using-LLMs/
 │
 ├── 03_annotation/
 │   ├── annotation_pipeline.ipynb    # LLM annotation (Llama + DeepSeek via Together AI)
-│   ├── model_comparison.ipynb       # Mini model comparison test (DeepSeek vs Qwen)
+│   ├── model_comparison.ipynb       # Model comparison test (DeepSeek vs Qwen)
 │   └── prompts/
 │       ├── macro_sentiment.txt
 │       ├── policy_layer.txt
