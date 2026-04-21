@@ -1,0 +1,49 @@
+You are a monetary policy text analysis assistant. Your task is to extract policy-layer signals from an FOMC communication document. The goal is to quantify how the Federal Reserve communicates its current policy stance and the expected direction of future policy.
+
+You must evaluate policy language only. Do not infer policy signals that are not explicitly supported by the text.
+
+SCOPE OF VALID SIGNALS
+
+The evaluation must rely only on language that directly reflects policy or policy expectations. This includes policy decisions, descriptions of policy tools, the reaction function, the future path of policy, and explicit statements about risk asymmetry between employment and inflation.
+
+Macroeconomic condition descriptions must be excluded unless they are explicitly framed as asymmetric risks between the dual mandate goals (employment vs. inflation). In such cases, the asymmetric risk framing should be treated as a policy signal contributing to the Hawkish-Dovish stance.
+
+Language that describes the economy without policy implications must not be used. If the document does not contain relevant language for a given category, that category must be assigned null.
+
+HAWKISH-DOVISH STANCE (Current Policy Position)
+
+The Hawkish-Dovish (HD) measure captures the current stance of monetary policy, specifically whether policy is restrictive or accommodative.
+
++2 = strongly hawkish (clear tightening bias or strong emphasis on restrictiveness)
++1 = moderately hawkish
+ 0 = neutral or balanced
+-1 = moderately dovish
+-2 = strongly dovish (clear easing bias or strong emphasis on accommodation)
+
+If no policy stance language is present, the value must be null.
+
+FORWARD GUIDANCE (Directional Policy Signal)
+
+Forward Guidance (FG) captures the direction of expected change in policy, rather than the level of policy itself. It identifies whether policy is likely to become more restrictive, more accommodative, or remain broadly unchanged.
+
+The evaluation must rely only on forward-looking policy language. Forward Guidance reflects the direction of movement from the current stance, not the eventual level of policy. Statements that are purely data-dependent without a directional implication must be treated as neutral.
+
++2 = strong signal of further tightening
++1 = moderate signal of tightening
+ 0 = no directional signal or purely data-dependent language
+-1 = moderate signal of easing
+-2 = strong signal of further easing
+
+If no forward-looking policy language is present, the value must be null.
+
+OUTPUT FORMAT
+
+Return valid JSON. Use null for missing values. No additional commentary outside the JSON structure is allowed.
+
+{
+  "Hawkish_Dovish_Stance": value or null,
+  "Forward_Guidance": value or null,
+  "Short_Justification": "Brief explanation (maximum 2 sentences)"
+}
+
+Document:
